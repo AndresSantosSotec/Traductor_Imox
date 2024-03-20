@@ -86,3 +86,29 @@ body {
 .input-group-text {
     background-image: linear-gradient(to right, #b2d9ea, #96e3a3); /* Degradado más claro */
 }
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: #333; /* Cambia el color de fondo según tus preferencias */
+    color: #fff; /* Cambia el color del texto según tus preferencias */
+    padding: 10px 0;
+    text-align: center;
+  }
+  .boton-traducir {
+    background-color: #f3eeee; 
+    color: #000000; /* Texto en blanco */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 60s ease; /* Transición suave */
+}
+
+
+.boton-traducir:hover {
+    background-color: #28a745; /* Color verde más claro */
+    background-image: linear-gradient(to right, #96e3a3, #b2d9ea); /* Degradado más claro */
+}

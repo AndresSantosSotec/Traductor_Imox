@@ -31,13 +31,13 @@
 
 <div id="main" class="container">
     <h2 class="mt-4">Traductor Imox</h2>
-    <div class="row">
+    <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Español</span>
                 </div>
-                <textarea id="textoEspañol" class="form-control" aria-label="With textarea" placeholder="Ingresa un texto en español"></textarea>
+                <textarea id="textoEspañol" class="form-control" aria-label="With textarea" placeholder="Ingresa un texto en español" oninput="expandTextarea(this)"></textarea>
             </div>
         </div>
         <div class="col-md-6">
@@ -48,10 +48,11 @@
                 <textarea id="textoQeqchi" class="form-control" aria-label="With textarea" placeholder="Traducción en q'eqchi'" readonly></textarea>
             </div>
         </div>
+        <div class="col-md-12 text-center"> <!-- Agregamos una columna para el botón de traducción -->
+            <button class="boton-traducir" onclick="traducir()">Traducir</button> <!-- Botón de traducción -->
+        </div>
     </div>
 </div>
-
-
 
 <footer class="footer mt-5">
     <div class="container">
@@ -68,6 +69,15 @@ function openNav() {
 function closeNav() {
     document.getElementById("mySidebar").style.width = "0";
     document.getElementById("main").style.marginLeft = "0";
+}
+
+function expandTextarea(textarea) {
+    textarea.style.height = 'auto';
+    textarea.style.height = (textarea.scrollHeight + 10) + 'px'; // Ajusta la altura del área de texto según el contenido
+}
+
+function traducir() {
+    // Aquí puedes agregar tu función para realizar la traducción
 }
 </script>
 
