@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Imox</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/yeti/bootstrap.min.css" integrity="sha384-mLBxp+1RMvmQmXOjBzRjqqr0dP9VHU2tb3FK6VB0fJN/AOu7/y+CAeYeWJZ4b3ii" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/Traductor.css">
+
+</head>
+<body>
+
+<header class="navbar navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" onclick="openNav()">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <span class="navbar-brand">Imox Traductor</span>
+</header>
+
+<div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#"><i class="fas fa-home mr-2"></i> Página de inicio</a>
+    <a href="#"><i class="fas fa-book mr-2"></i> Diccionario</a>
+    <a href="#"><i class="fas fa-history mr-2"></i> Historial de traducciones</a>
+    <a href="#"><i class="fas fa-user-cog mr-2"></i> Configuración del perfil</a>
+    <a href="#"><i class="fas fa-envelope mr-2"></i> Página de contacto o soporte</a>
+    <a href="#"><i class="fas fa-info-circle mr-2"></i> Acerca de</a>
+    <a href="#"><i class="fas fa-handshake mr-2"></i> Aportes</a>
+</div>
+
+<div id="main" class="container">
+    <h2 class="mt-4">Traductor Imox</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Español</span>
+                </div>
+                <textarea id="textoEspañol" class="form-control" aria-label="With textarea" placeholder="Ingresa un texto en español"></textarea>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Q'eqchi'</span>
+                </div>
+                <textarea id="textoQeqchi" class="form-control" aria-label="With textarea" placeholder="Traducción en q'eqchi'" readonly></textarea>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<footer class="footer mt-5">
+    <div class="container">
+        <span>© 2024 ZeldaTeam Devs </span>
+    </div>
+</footer>
+
+<script>
+function openNav() {
+    document.getElementById("mySidebar").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+}
+</script>
+
+</body>
+</html>

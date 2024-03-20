@@ -1,0 +1,88 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.navbar {
+    background-color: #007bff; /* Azul */
+    color: white;
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #343a40;
+    overflow-x: hidden;
+    transition: width 0.5s; /* Cambio de ancho suavizado */
+    padding-top: 60px;
+}
+
+.sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    display: block;
+    transition: background-color 0.3s; /* Cambio de color de fondo suavizado */
+}
+
+.sidebar a:hover {
+    background-color: #007bff; /* Azul */
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left 0.5s; /* Transición suave del margen izquierdo */
+    padding: 16px;
+    background-color: #ffffff; /* Blanco */
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+
+#main h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #007bff; /* Azul */
+}
+
+#main p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+#textoEspañol,
+#textoQeqchi,
+.input-group-text {
+    border-radius: 5px; /* Bordes redondeados */
+    color: #495057; /* Color de texto oscuro */
+}
+
+#textoEspañol {
+    border-color: #28a745; /* Borde en color verde */
+    background-image: linear-gradient(to right, #b2d9ea, #96e3a3); /* Degradado más claro */
+}
+
+#textoQeqchi {
+    border-color: #28a745; /* Borde en color verde */
+    background-image: linear-gradient(to right, #96e3a3, #b2d9ea); /* Degradado más claro */
+}
+
+.input-group-text {
+    background-image: linear-gradient(to right, #b2d9ea, #96e3a3); /* Degradado más claro */
+}

@@ -1,0 +1,133 @@
+
+body, html{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    
+}
+
+
+
+.contenedor{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+
+.cont_imagen{
+    margin: 0;
+    padding: 0;
+    width: 50%;
+    height: 100%;
+    background-color: white;
+}
+
+.cont_form{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    background-color: white;
+    justify-content: start  ;
+    align-items: center;
+    
+}
+
+
+.cont_form p{
+   font-size: 2.5rem;
+   margin-top: 2.2rem;
+   font-family: Roboto Flex;
+}
+
+#p_info{
+    font-size: 1rem;
+    font-family: Roboto Flex;
+    margin: 0;
+}
+
+
+
+.cont_imagen img{
+   display: block;
+   width: 100%;
+   height: 100%;
+   
+}
+
+
+.textbox{
+    border: none;
+    background-color: transparent;
+    border-bottom: 2px solid #000000;
+    outline: none;
+    width: 30rem;
+    font-size: 1.2rem;
+    position: relative ;
+    padding-left: 40px;
+    padding-bottom: 10px;
+    margin-top: 0.4rem;
+}
+
+.textbox:focus {
+    border-bottom: 2px solid #D0944E;
+    
+    
+}
+
+.textbox::placeholder{
+    color: black;
+}
+
+
+.input-group{
+    margin-top: 3rem;
+}
+
+
+
+#icono1{
+    
+    font-size: 1.8rem;
+    position: absolute;
+    
+}
+
+#icono2{
+    
+    font-size: 1.8rem;
+    position: absolute;
+}
+
+
+.boton{
+    position: absolute;
+    margin-top: 5rem;
+    text-decoration: none;
+    outline: none;
+    color: white;
+    background-color: #D0944E;
+    padding: 5px 61px 5px 59px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 30px;
+    margin-left: 7.7rem;
+}
+
+
+#btn_registro{
+    position: relative;
+    background-color: transparent;
+    border: 1px solid;
+    border-color: black;
+    margin-top: 9rem;
+    text-decoration: none;
+    outline: none;
+    color: black;
+    padding: 5px 56px 5px 53px;
+    border-radius: 30px;
+    
+
+}
+
