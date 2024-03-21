@@ -43,11 +43,13 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">Q'eqchi'</span>
                 </div>
-                <textarea id="textoQeqchi" class="form-control" aria-label="With textarea" placeholder="Traducción en q'eqchi'" readonly></textarea>
+                <textarea id="textoQeqchi" class="form-control" aria-label="With textarea" placeholder="Traducción en q'eqchi'" oninput="expandTextarea(this)" readonly></textarea>
             </div>
         </div>
-        <div class="col-md-12 text-center"> <!-- Agregamos una columna para el botón de traducción -->
-            <button class="boton-traducir" onclick="traducir()">Traducir</button> <!-- Botón de traducción -->
+        <div class="col-md-12 text-center">
+            <button class="boton-traducir" onclick="cambiarIdioma()"><i class="fas fa-exchange-alt"></i></button> <!-- Botón de intercambio de idioma -->
+            <button class="boton-traducir" onclick="traducirEspañolAQuechí()">Traducir Español a Q'eqchi'</button>
+            <button class="boton-traducir" onclick="traducirQuechíAEspañol()">Traducir Q'eqchi' a Español</button>
         </div>
     </div>
 </div>
@@ -74,10 +76,23 @@ function expandTextarea(textarea) {
     textarea.style.height = (textarea.scrollHeight + 10) + 'px'; // Ajusta la altura del área de texto según el contenido
 }
 
-async function traducir() {
+function cambiarIdioma() {
+    const inputEspañol = document.getElementById("textoEspañol");
+    const inputQeqchi = document.getElementById("textoQeqchi");
+
+    // Cambiar la habilidad de entrada entre español y Q'eqchi'
+    inputEspañol.disabled = !inputEspañol.disabled;
+    inputQeqchi.disabled = !inputQeqchi.disabled;
+
+    // Limpiar los campos de texto al cambiar el idioma
+    inputEspañol.value = "";
+    inputQeqchi.value = "";
+}
+
+async function traducirEspañolAQuechí() {
     const textoEspañol = document.getElementById("textoEspañol").value;
 
-    // Realizar solicitud a la API
+    // Realizar solicitud a la API para traducir de español a q'eqchi'
     const response = await fetch('http://localhost:8000/traducciones');
     const data = await response.json();
 
@@ -88,6 +103,23 @@ async function traducir() {
         document.getElementById("textoQeqchi").value = traduccion.palabra_maya;
     } else {
         document.getElementById("textoQeqchi").value = "No se encontró traducción";
+    }
+}
+
+async function traducirQuechíAEspañol() {
+    const textoQuechí = document.getElementById("textoQeqchi").value;
+
+    // Realizar solicitud a la API para traducir de q'eqchi' a español
+    const response = await fetch('http://localhost:8000/traducciones');
+    const data = await response.json();
+
+    // Buscar la traducción correspondiente en los datos recibidos
+    const traduccion = data.find(item => item.palabra_maya.toLowerCase() === textoQuechí.toLowerCase());
+
+    if (traduccion) {
+        document.getElementById("textoEspañol").value = traduccion.palabra_esp;
+    } else {
+        document.getElementById("textoEspañol").value = "No se encontró traducción";
     }
 }
 </script>
