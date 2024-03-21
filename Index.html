@@ -74,8 +74,21 @@ function expandTextarea(textarea) {
     textarea.style.height = (textarea.scrollHeight + 10) + 'px'; // Ajusta la altura del área de texto según el contenido
 }
 
-function traducir() {
-    // Aquí puedes agregar tu función para realizar la traducción
+async function traducir() {
+    const textoEspañol = document.getElementById("textoEspañol").value;
+
+    // Realizar solicitud a la API
+    const response = await fetch('http://localhost:8000/traducciones');
+    const data = await response.json();
+
+    // Buscar la traducción correspondiente en los datos recibidos
+    const traduccion = data.find(item => item.palabra_esp.toLowerCase() === textoEspañol.toLowerCase());
+
+    if (traduccion) {
+        document.getElementById("textoQeqchi").value = traduccion.palabra_maya;
+    } else {
+        document.getElementById("textoQeqchi").value = "No se encontró traducción";
+    }
 }
 </script>
 
