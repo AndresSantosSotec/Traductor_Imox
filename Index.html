@@ -47,8 +47,8 @@
             </div>
         </div>
         <div class="col-md-12 text-center">
-            <button class="boton-traducir" onclick="cambiarIdioma()"><i class="fas fa-exchange-alt"></i></button> <!-- Botón de intercambio de idioma -->
             <button class="boton-traducir" onclick="traducirEspañolAQuechí()">Traducir Español a Q'eqchi'</button>
+            <button class="boton-traducir" onclick="cambiarIdioma()"><i class="fas fa-exchange-alt"></i></button> <!-- Botón de intercambio de idioma -->
             <button class="boton-traducir" onclick="traducirQuechíAEspañol()">Traducir Q'eqchi' a Español</button>
         </div>
     </div>
@@ -61,6 +61,8 @@
 </footer>
 
 <script>
+let españolActivo = true;
+
 function openNav() {
     document.getElementById("mySidebar").style.width = "250px";
     document.getElementById("main").style.marginLeft = "250px";
@@ -80,12 +82,18 @@ function cambiarIdioma() {
     const inputEspañol = document.getElementById("textoEspañol");
     const inputQeqchi = document.getElementById("textoQeqchi");
 
-    // Cambiar la habilidad de entrada entre español y Q'eqchi'
-    inputEspañol.disabled = !inputEspañol.disabled;
-    inputQeqchi.disabled = !inputQeqchi.disabled;
+    // Cambiar entre español y Q'eqchi'
+    españolActivo = !españolActivo;
 
-    // Limpiar los campos de texto al cambiar el idioma
-    inputEspañol.value = "";
+    if (españolActivo) {
+        inputEspañol.placeholder = "Ingresa un texto en español";
+        inputQeqchi.placeholder = "Traducción en q'eqchi'";
+    } else {
+        inputEspañol.placeholder = "Traducción en español";
+        inputQeqchi.placeholder = "Ingresa un texto en q'eqchi'";
+    }
+
+    inputEspañol.value = ""; // Limpiar los campos de texto
     inputQeqchi.value = "";
 }
 
